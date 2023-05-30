@@ -6,7 +6,12 @@ namespace PIZERRIAGM.Data.Entities
     // Clase DetalleFactura
     public class DetalleFactura
         {
-            [Key]
+        public DetalleFactura()
+        {
+                Factura = new Factura();
+            Pizza = new Pizza();
+        }
+        [Key]
             public int Id { get; set; }
 
             [Required]
@@ -24,7 +29,7 @@ namespace PIZERRIAGM.Data.Entities
             [Required]
             public int Cantidad { get; set; }
 
-            [Required]
+            [Required, Column(TypeName = "decimal(18,2)")]
             public decimal Precio { get; set; }
         }
 

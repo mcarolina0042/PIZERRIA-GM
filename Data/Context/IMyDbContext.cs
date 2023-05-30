@@ -3,7 +3,7 @@ using PIZERRIAGM.Data.Entities;
 
 namespace PIZERRIAGM.Data.Context
 {
-    public interface IMyDbContext1
+    public interface IMyDbContext
     {
        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<DetalleFactura> DetalleFacturas { get; set; }

@@ -3,7 +3,7 @@ using PIZERRIAGM.Data.Entities;
 
 namespace PIZERRIAGM.Data.Context
 {
-    public class MyDbContext : DbContext, IMyDbContext, IMyDbContext1
+    public class MyDbContext : DbContext, IMyDbContext
     {
         private readonly IConfiguration confg;
 
@@ -19,7 +19,7 @@ namespace PIZERRIAGM.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(config.GetConnectionString("MSSQL"));
+            optionsBuilder.UseSqlServer(confg.GetConnectionString("MSSQL"));
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

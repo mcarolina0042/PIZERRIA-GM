@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PIZERRIAGM.Data.Entities
 {
@@ -8,14 +9,14 @@ namespace PIZERRIAGM.Data.Entities
             [Key]
             public int Id { get; set; }
 
-            [Required]
-            [StringLength(50)]
-            public string Nombre { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Nombre { get; set; } = null!;
 
             [Required]
             public int Tamaño { get; set; }
 
-            [Required]
+            [Required,Column(TypeName ="decimal(18,2)")]
             public decimal Precio { get; set; }
         }
 
