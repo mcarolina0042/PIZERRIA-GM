@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using PIZERRIAGM.Data;
 using PIZERRIAGM.Data.Context;
+using PIZERRIAGM.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddDbContext<MyDbContext>();
 builder.Services.AddScoped<IMyDbContext, MyDbContext>();
+builder.Services.AddScoped<IClienteServices, ClienteServices>();
+builder.Services.AddScoped<IDetalleFacturaServices, DetalleFacturaServices>();
+
 
 var app = builder.Build();
 

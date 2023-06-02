@@ -7,7 +7,7 @@ namespace PIZERRIAGM.Data.Context
     {
         private readonly IConfiguration confg;
 
-        public MyDbContext(IConfiguration confg)
+         public MyDbContext(IConfiguration confg)
         {
             this.confg = confg;
         }

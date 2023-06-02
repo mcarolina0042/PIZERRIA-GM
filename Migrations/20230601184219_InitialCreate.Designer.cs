@@ -11,7 +11,7 @@ using PIZERRIAGM.Data.Context;
 namespace PIZERRIAGM.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20230530083005_InitialCreate")]
+    [Migration("20230601184219_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
