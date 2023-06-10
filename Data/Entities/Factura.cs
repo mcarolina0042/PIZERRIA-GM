@@ -42,8 +42,13 @@ namespace PIZERRIAGM.Data.Entities
         public decimal Total { get; set; }
 
         public ICollection<DetalleFactura> Detalles { get; set; }
+<<<<<<< HEAD
         public static Factura Crear(FacturaRequest factura)
              => new Factura()
+=======
+        public static FacturaRequest Crear(FacturaRequest factura)
+             => new FacturaRequest()
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
              {
                  ClienteId = factura.ClienteId,
                  Cliente = factura.Cliente,
@@ -96,6 +101,7 @@ namespace PIZERRIAGM.Data.Entities
 
         }
 
+<<<<<<< HEAD
         
         public FacturaResponse ToResponse()
         {
@@ -113,4 +119,21 @@ namespace PIZERRIAGM.Data.Entities
         }
 
     }
+=======
+        public FacturaResponse ToResponse
+        => new FacturaResponse()
+        {
+            ClienteId = ClienteId,
+            Cliente = Cliente,
+            Referencia = Referencia,
+            Extra = Extra,
+            SubTotal = SubTotal,
+            ITBIS = ITBIS,
+            Total = Total
+        };
+    
+}
+
+
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
 }

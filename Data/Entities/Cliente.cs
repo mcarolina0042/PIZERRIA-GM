@@ -6,8 +6,13 @@ namespace PIZERRIAGM.Data.Entities
 {
     // Clase Cliente
     public class Cliente
+<<<<<<< HEAD
     {
         [Key]
+=======
+        {
+            [Key]
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
         public int Id { get; set; }
 
         [Required]
@@ -30,6 +35,7 @@ namespace PIZERRIAGM.Data.Entities
             return cambio;
         }
 
+<<<<<<< HEAD
         public ClienteResponse ToResponse()
         {
             return new ClienteResponse
@@ -42,5 +48,16 @@ namespace PIZERRIAGM.Data.Entities
         }
 
     }
+=======
+        public ClienteResponse ToResponse
+        => new ClienteResponse()
+        {
+            Nombre = Nombre
+
+        };
+    }
+
+
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
     
 }

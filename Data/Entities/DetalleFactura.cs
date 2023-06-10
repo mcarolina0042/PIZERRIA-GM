@@ -26,11 +26,19 @@ namespace PIZERRIAGM.Data.Entities
         [Required]
         public int PizzaId { get; set; }
 
+<<<<<<< HEAD
         [ForeignKey("PizzaId")]
         public Pizza Pizza { get; set; }
 
         [Required]
         public int Cantidad { get; set; }
+=======
+            [ForeignKey("PizzaId")]
+            public Pizza Pizza { get; set; } 
+
+        [Required]
+            public int Cantidad { get; set; }
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
 
         [Required, Column(TypeName = "decimal(18,2)")]
         public decimal Precio { get; set; }
@@ -81,6 +89,7 @@ namespace PIZERRIAGM.Data.Entities
             return cambio;
         }
 
+<<<<<<< HEAD
 		public  DetalleFacturaResponse ToResponse() { 
              return new DetalleFacturaResponse
 			{
@@ -94,4 +103,19 @@ namespace PIZERRIAGM.Data.Entities
         }
 
     }
+=======
+        public DetalleFacturaResponse ToResponse
+        => new DetalleFacturaResponse()
+        {
+            FacturaId = FacturaId,
+            Factura = Factura,
+            PizzaId = PizzaId,
+            Pizza = Pizza,
+            Cantidad = Cantidad,
+            Precio = Precio
+        };
+    }
+
+    
+>>>>>>> 2cdf0b53abded4d0bad7ed0d2ff8def3a84b9de8
 }
