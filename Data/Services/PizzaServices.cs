@@ -18,12 +18,12 @@ namespace PIZERRIAGM.Data.Services
 		public string? Message { get; set; }
 		public T? Data { get; set; }
 	}
-	public class PizzaServices
+	public class PizzaServices : IPizzaServices
 	{
 		private readonly IMyDbContext dbContext;
 
 		public PizzaServices(IMyDbContext dbContext)
-        {
+		{
 			this.dbContext = dbContext;
 		}
 
@@ -101,7 +101,7 @@ namespace PIZERRIAGM.Data.Services
 					Message = "Ok",
 					Success = true,
 					Data = pizzas
-				
+
 				};
 			}
 			catch (Exception E)

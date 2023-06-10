@@ -18,12 +18,12 @@ namespace PIZERRIAGM.Data.Services
 		public string? Message { get; set; }
 		public T? Data { get; set; }
 	}
-	public class UsuarioServices
+	public class UsuarioServices : IUsuarioServices
 	{
 		private readonly IMyDbContext dbContext;
 
 		public UsuarioServices(IMyDbContext dbContext)
-        {
+		{
 			this.dbContext = dbContext;
 		}
 

@@ -18,12 +18,12 @@ namespace PIZERRIAGM.Data.Services
 		public string? Message { get; set; }
 		public T? Data { get; set; }
 	}
-	public class FacturaServices
+	public class FacturaServices : IFacturaServices
 	{
 		private readonly IMyDbContext dbContext;
 
 		public FacturaServices(IMyDbContext dbContext)
-        {
+		{
 			this.dbContext = dbContext;
 		}
 
@@ -90,7 +90,7 @@ namespace PIZERRIAGM.Data.Services
 			{
 				var facturas = await dbContext.Facturas
 					.Where(d =>
-						(d.ClienteId + " " + d.Cliente + " " + d.Referencia + " " + d.Extra + " " + d.SubTotal + "" + d.ITBIS +"" + d.Total)
+						(d.ClienteId + " " + d.Cliente + " " + d.Referencia + " " + d.Extra + " " + d.SubTotal + "" + d.ITBIS + "" + d.Total)
 						.ToLower()
 						.Contains(filtro.ToLower()
 						)
